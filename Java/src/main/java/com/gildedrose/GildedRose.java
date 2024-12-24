@@ -3,6 +3,9 @@ package com.gildedrose;
 class GildedRose {
     Item[] items;
 
+    public static final int LOWEST_POSSIBLE_QUALITY = 0;
+    public static final int HIGHEST_POSSIBLE_QUALITY = 50;
+    
     public GildedRose(Item[] items) {
         this.items = items;
     }
@@ -23,7 +26,7 @@ class GildedRose {
     }
 
     private void assignQualityForExpiredItems(Item item) {
-      if(isAgedBrie(item) && item.quality <50) 
+      if(isAgedBrie(item) && item.quality < HIGHEST_POSSIBLE_QUALITY) 
         item.quality = item.quality + 1;
       else {
         item.quality = item.quality - 1;
